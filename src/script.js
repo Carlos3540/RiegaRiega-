@@ -1,3 +1,4 @@
+    import './styles.css'
  // Datos de plantas
         let plants = JSON.parse(localStorage.getItem('plants') || '[]');
 
