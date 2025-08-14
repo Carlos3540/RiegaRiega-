@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/RiegaRiega-/vite.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RiegaRiega - Cuidado de Plantas 🌱</title>
+  <script type="module" crossorigin src="/RiegaRiega-/assets/index-DfTFzWKp.js"></script>
+  <link rel="stylesheet" crossorigin href="/RiegaRiega-/assets/index-D1AvVHHS.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/RiegaRiega-/assets/Riega-transp-IWsi8Akz.png" alt="riegariega Logo" style="height: 120px;">
+
+            <p>Tu jardín digital personalizado</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('plants')">Mis Plantas</button>
+            <button class="tab" onclick="showTab('add')">Agregar</button>
+            <button class="tab" onclick="showTab('stats')">Estadísticas</button>
+        </div>
+
+        <!-- Tab: Mis Plantas -->
+        <div id="plants" class="tab-content active">
+            <div id="plantsList">
+                <div class="empty-state">
+                    <div class="emoji">🌿</div>
+                    <h3>¡Comienza tu jardín digital!</h3>
+                    <p>Agrega tu primera planta para comenzar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Agregar Planta -->
+        <div id="add" class="tab-content">
+            <form id="plantForm">
+                <div class="form-group">
+                    <label for="plantName">Nombre de la planta 🌱</label>
+                    <input type="text" id="plantName" placeholder="Ej: Rosa del jardín" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="plantType">Tipo de planta</label>
+                    <select id="plantType" required>
+                        <option value="">Selecciona un tipo</option>
+                        <option value="suculenta">🌵 Suculenta</option>
+                        <option value="cactus">🌵 Cactus</option>
+                        <option value="flor">🌸 Planta con flor</option>
+                        <option value="helecho">🌿 Helecho</option>
+                        <option value="arbol">🌳 Árbol pequeño</option>
+                        <option value="hierba">🌱 Hierba aromática</option>
+                        <option value="otro">🪴 Otra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="waterFreq">Frecuencia de riego (días)</label>
+                    <select id="waterFreq" required>
+                        <option value="1">Diario</option>
+                        <option value="2">Cada 2 días</option>
+                        <option value="3">Cada 3 días</option>
+                        <option value="7">Semanal</option>
+                        <option value="14">Cada 2 semanas</option>
+                        <option value="30">Mensual</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">🌱 Agregar Planta</button>
+            </form>
+        </div>
+
+        <!-- Tab: Estadísticas -->
+        <div id="stats" class="tab-content">
+            <div class="stats" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalPlants">0</div>
+                    <div class="stat-label">Plantas totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="plantsNeedWater">0</div>
+                    <div class="stat-label">Necesitan riego</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-secondary" onclick="testNotification()">
+                🔔 Probar Notificación
+            </button>
+        </div>
+    </div>
+    
+    
+    <div id="notification" class="notification"></div>
+    <div id="app"></div>
+  </body>
+</html>
