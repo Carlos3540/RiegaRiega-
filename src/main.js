@@ -1,34 +1,5 @@
-// Mostrar en pantalla si el JS está vivo
-const debugBox = document.createElement('div');
-debugBox.style.position = 'fixed';
-debugBox.style.bottom = '10px';
-debugBox.style.left = '10px';
-debugBox.style.background = 'rgba(0,0,0,0.7)';
-debugBox.style.color = '#fff';
-debugBox.style.padding = '8px';
-debugBox.style.fontSize = '12px';
-debugBox.style.zIndex = '999999';
-debugBox.innerText = 'JS cargando...';
-document.body.appendChild(debugBox);
 
-document.addEventListener('DOMContentLoaded', () => {
-  debugBox.innerText = 'DOM listo ✅';
-
-  const btn = document.getElementById('miBoton'); // cambia por el ID real
-  if (btn) {
-    debugBox.innerText += '\nBotón encontrado ✅';
-    
-    const handler = () => {
-      debugBox.innerText += '\nBotón presionado ✅';
-      alert('Botón funcionando en APK');
-    };
-    btn.addEventListener('click', handler);
-    btn.addEventListener('touchend', handler);
-  } else {
-    debugBox.innerText += '\nBotón NO encontrado ❌';
-  }
-});
-
+import './debug-apk.js'; // Siempre al inicio
 
 import './styles.css'
 import javascriptLogo from './javascript.svg'
