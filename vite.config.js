@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
-    base: '', // <-- vacío para rutas relativas en APK
+    base:
+      mode === 'gh'
+        ? '/RiegaRiega-/' // para GitHub Pages
+        : '', // vacío para Capacitor / APK
     build: {
       outDir: 'dist'
     }

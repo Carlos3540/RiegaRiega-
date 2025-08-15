@@ -1,5 +1,4 @@
 
-import './debug-apk.js'; // Siempre al inicio
 
 import './styles.css'
 import javascriptLogo from './javascript.svg'
